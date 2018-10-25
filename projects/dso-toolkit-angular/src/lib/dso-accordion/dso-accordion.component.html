@@ -1,0 +1,30 @@
+<div class="dso-accordion">
+  <div class="dso-accordion-section">
+    <div class="dso-section-handle">
+      <a>Woning</a>
+    </div>
+  </div>
+  <div class="dso-accordion-section dso-success">
+    <div class="dso-section-handle">
+      <a>Bouwwerkzaamheden</a>
+    </div>
+  </div>
+  <div class="dso-accordion-section dso-warning" [class.dso-open]="accordionOpen">
+    <div class="dso-section-handle" (click)="accordionOpen = !accordionOpen">
+      <a>Plaats van het bouwwerk</a>
+    </div>
+    <div class="dso-section-body" *ngIf="accordionOpen">
+      <p>En dit is de inhoud van <strong>Plaats van het bouwwerk</strong></p>
+    </div>
+  </div>
+  <div class="dso-accordion-section dso-info">
+    <div class="dso-section-handle">
+      <a>Afmetingen van het bouwwerk</a>
+    </div>
+  </div>
+  <div class="dso-accordion-section dso-danger">
+    <div class="dso-section-handle">
+      <a>Extra werkzaamheden</a>
+    </div>
+  </div>
+</div>

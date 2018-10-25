@@ -125,6 +125,41 @@
           }
         }
       }
+    },
+    "dso-toolkit-angular": {
+      "root": "projects/dso-toolkit-angular",
+      "sourceRoot": "projects/dso-toolkit-angular/src",
+      "projectType": "library",
+      "prefix": "dso",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/dso-toolkit-angular/tsconfig.lib.json",
+            "project": "projects/dso-toolkit-angular/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/dso-toolkit-angular/src/test.ts",
+            "tsConfig": "projects/dso-toolkit-angular/tsconfig.spec.json",
+            "karmaConfig": "projects/dso-toolkit-angular/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/dso-toolkit-angular/tsconfig.lib.json",
+              "projects/dso-toolkit-angular/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "dso-toolkit-angular-dev"
